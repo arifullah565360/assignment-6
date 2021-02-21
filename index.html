@@ -23,12 +23,13 @@
         <input type="text" class="form-control" id="search" placeholder="Enter your search item here.">
       </div>
       <button type="button" id="search-btn" class="btn btn-primary mb-2">Search</button>
-      
+
     </div>
 
     <!-- If fails to find a matching record : following div will display in under the search box   -->
     <div style="text-align: center;">
       <p id="noRecordFound" style="display: none; color: red;">Opps! No picture found. Please try with a valid name.</p>
+      <h3>Image Selected: <span id="selected-image"></span></h3>
     </div>
     <!-- Spinner while loading data -->
     <div id="spinner" class="d-none text-center">
@@ -55,6 +56,18 @@
     <!-- slider -->
     <div class="main">
       <section class="mt-5" id="sliders">
+
+      </section>
+
+      <!-- Image box for slider -->
+      <section id="AddImage">
+        <h5 class="text-center">Selected Images:</h5>
+        <div id="Image-Box">
+        </div>
+      </section>
+
+
+      <!-- '''''''''' -->
 
       </section>
       <div class="dots d-flex mt-2 w-100 justify-content-center align-items-center bg-light">
