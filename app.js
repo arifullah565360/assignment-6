@@ -56,8 +56,11 @@ const selectItem = (event, img) => {
   let item = sliders.indexOf(img);
   if (item === -1) {
     sliders.push(img);
+    document.getElementById("selected-image").innerText = `${sliders.length}`;
+
   } else {
     sliders.splice(item, 1);
+    document.getElementById("selected-image").innerText = `${sliders.length}`;
   }
 }
 var timer
@@ -67,6 +70,8 @@ const createSlider = () => {
     alert('Select at least 2 image.')
     return;
   }
+
+  selectImages();
 
   const duration = document.getElementById('duration').value;
   const durationAlert = document.getElementById('duration-alert');
@@ -155,3 +160,19 @@ const loadingStatus = () => {
   const loading = document.getElementById('spinner');
   loading.classList.toggle('d-none');
 }
+
+//Show select images:
+
+const selectImages = () => {
+	document.getElementById("Image-Box").innerText = "";
+
+	const ImageBox = document.getElementById("Image-Box");
+
+	sliders.forEach((image) => {
+		let selectImage = document.createElement("div");
+		selectImage.className = "selectImage";
+		selectImage.innerHTML = `<img src="${image}">`;
+
+		ImageBox.appendChild(selectImage);
+	});
+};
